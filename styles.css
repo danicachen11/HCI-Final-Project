@@ -3,6 +3,19 @@ html, body {
   margin: 0;
   padding: 0;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: 'Zilla Slab Highlight';
+  font-size: 60px;
+  font-weight: 400;
+}
 
 h2 {
 	color: #000;
@@ -26,7 +39,7 @@ button {
 	font-weight: 700;
   border: none;
   border-radius: 8px;
-  background: #ED7C30;
+  background: #F4985B;
   color: white;
   cursor: pointer;
   box-shadow: 0 6px 4px 0 rgba(0, 0, 0, 0.25);
@@ -41,7 +54,7 @@ button:hover {
   display: flex;              
   justify-content: space-between; 
   align-items: center;    
-  background-color: #F6DBDB;
+  background-color: #D99DAF;
   padding: 16px 40px;   
 }
 
@@ -50,10 +63,13 @@ button:hover {
   display: flex;             
   align-items: center;
   gap: 12px;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
 }
 
 .logo {
-  width: 50px;
+  width: 100px;
   height: auto;
 }
 
@@ -67,13 +83,14 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: #222;
-  font-size: 18px;
-  font-weight: 500;
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
 }
 
 nav ul li a:hover {
-  opacity: 0.6;
+  color: black;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 /*Hero*/
@@ -83,13 +100,12 @@ nav ul li a:hover {
 .hero {
   position: relative;
   height: 650px;        /* cropped height*/
-  overflow: hidden;
 }
 
 
 .hero-text {
   position: absolute;      
-  top: 40%;             
+  top: 45%;             
   left: 10%;             
   transform: translate(0%, -50%);  
   color: white;          
@@ -104,6 +120,7 @@ nav ul li a:hover {
 	font-weight: 400;
 	line-height: normal;
 	text-align: left;
+	margin: 0 0 30px;
 }
 
 .hero-text p {
@@ -114,6 +131,7 @@ nav ul li a:hover {
 	font-weight: 400;
 	line-height: normal;
 	text-align: left;
+	margin: 0 0 30px;
 }
 
 .hero-img {
@@ -122,18 +140,665 @@ nav ul li a:hover {
   object-fit: cover;  
   object-position: center;
   display: block;
+  margin: 0 0 11px;
 }
 
-.crafts {
-	background:#FFFBFB; 
+.crafts{
+  background-color: #FFFBFB;
+}
+
+.craft-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 250px); /* slightly larger cards */
+  justify-content: center;                 /* center the grid */
+  gap: 60px;                               /* generous spacing */
+  margin-top: 60px;
+}
+
+/* Individual craft card */
+.craft {
+	background-color: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  width: 100%;  /* fills grid column */
+}
+
+/* Image inside card */
+.craft img {
+  width: 100%;
+  aspect-ratio: 1 / 1;    /* square images */
+  object-fit: cover;      /* crops if needed */
+  display: block;
+}
+
+/* Craft title */
+.craft p {
+  font-family: 'Patrick Hand';
+  font-size: 18px;
+  font-weight: 500;
+  margin: 12px 0;
+  color: #222;
+}
+
+/* Hover effect */
+.craft:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .craft-grid {
+    grid-template-columns: repeat(2, 220px);
+    gap: 50px;
+  }
+}
+
+@media (max-width: 700px) {
+  .craft-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/*featured projects section*/
+/* Featured Projects Section */
+.featured-projects {
+  background: #FFFBFB;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.featured-projects h2 {
+  margin-bottom: 40px; /* reuses your global h2 */
+}
+
+/* Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 60px;
+}
+
+/* Card */
+.project-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transition: 0.25s;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* Image stays responsive */
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Content wrapper */
+.project-card .content {
+  padding: 20px;
+}
+
+/* Link inside card */
+.project-card a {
+  color: #ED7C30;
+  text-decoration: none;
+}
+
+/* Hover */
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 
-footer {
-	background: #EBBEB6;
+
+
+/* -----------------------------
+   BLOG PAGE
+----------------------------- */
+.blog-section {
+  padding: 80px 20px;
+  background: white;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+
+/* Individual blog cards */
+.blog-card {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-bottom: 40px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+/* Image inside card */
+.blog-card img {
+  width: 360px;            /* fixed width for all cards */
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px 0 0 16px;
+  display: block;
+}
+
+/* Text inside card */
+.blog-card div {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.blog-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-family: 'Patrick Hand SC';
+  font-size: 35px;
+}
+
+.blog-card p {
+  margin: 0;
+  font-family: 'Patrick Hand';
+  font-size: 18px;
+  line-height: 1.5;
+  color: #4B3F99;
+}
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .blog-card {
+    flex-direction: column;
+  }
+
+  .blog-card img {
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* -----------------------------
+   MATERIALS / KITS PAGE
+----------------------------- */
+.products-page {
+  padding: 80px 0;
+  text-align: center;
+  background: #FFFBFB;
+}
+.products-page h1 {
+  margin-bottom: 20px;
+}
+.gallery-section button {
+  display: block;               /* make it act like a block for alignment */
+  margin-left: auto;            /* push it to the right */
+  margin-right: 115px
+}
+/* -----------------------------------
+   PRODUCT GRID
+----------------------------------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Product card */
+.product-card {
+	display: flex; 
+  background: white;
+  flex-direction: column;      /* stack content vertically */
+  justify-content: space-between; 
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  text-align: center;
+  transition: 0.25s;
+}
+
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+
+/* Image */
+.product-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+/* Product title */
+.product-card p {
+  margin-bottom: 20px;
+  flex-grow: 1;
+  font-size: 25px;
+}
+
+/* Add to cart button */
+.add-btn {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 950px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+
+
+
+/* -----------------------------------
+   GALLERY PAGE
+----------------------------------- */
+.gallery-section {
+  text-align: center;
+  padding: 80px 0;
+}
+
+/* spacing for hero text on gallery */
+.gallery-section h1 {
+  margin-bottom: 20px;
+}
+
+.gallery-section p {
+  margin-bottom: 30px;
+}
+
+.gallery-section button {
+  margin-bottom: 50px;
+}
+
+/* gallery layout */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* images */
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+
+
+/* -----------------------------
+   STORY / ABOUT PAGE
+----------------------------- */
+
+.story-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  border-radius: 16px;
+  max-width: 1200px;        /* max width of content */
+  padding: 40px 20px 80px;
+  margin: 0 auto;           /* centers the content horizontally */
+  justify-content: center;  /* optional: center items if total width is smaller */
+}
+
+
+.story h1 {
+  font-family: 'Zilla Slab Highlight';
+  font-size: 60px;
+  text-align: center;
+  margin-top: 40px;
+  
+}
+
+.founder-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.story-content img,
+.team-grid img,
+.other-team .team-grid img {
+  width: 250px;
+  height: 250px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.founder-name {
+  font-family: 'Patrick Hand SC';
+  font-size: 22px;
+  color: #222;
+}
+
+.story-text {
+  font-family: 'Patrick Hand';
+  font-size: 20px;
+  line-height: 1.6;
+  color: #222;
+  flex: 1;
+  text-align: left;
+}
+
+/* -----------------------------
+   TEAM SECTIONS
+----------------------------- */
+
+.team {
+  border-top: 8px solid #EEE176; /* subtle yellow accent */
+  padding: 60px 20px;
+  background-color: rgba(150, 142, 201, 0.05); 
+}
+
+.other-team {
+  border-top: 8px solid #968EC9; /* subtle purple accent */
+  padding: 60px 20px;
+}
+
+.team h2,
+.other-team h2 {
+  text-align: center;
+  font-family: 'Zilla Slab Highlight';
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px;
+}
+
+.team-grid div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.team-grid p {
+  font-family: 'Patrick Hand SC';
+  font-size: 20px;
+  text-align: center;
+}
+
+/* -----------------------------
+   RESPONSIVE
+----------------------------- */
+@media (max-width: 900px) {
+  .story-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .story-text {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .story-section h1 {
+    font-size: 48px;
+  }
+
+  .story-text {
+    font-size: 20px;
+  }
+  
+  .team h2,
+  .other-team h2 {
+    font-size: 36px;
+  }
+
+  .team-grid img {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+
+/* -----------------------------
+   CONTACT PAGE
+----------------------------- */
+.contact-section {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-section h1 {
+  font-family: 'Zilla Slab Highlight';
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  font-family: 'Patrick Hand';
+  font-size: 22px;
+  margin-bottom: 50px;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* Container stacks form and info vertically */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Form styling */
+.contact-form {
+  background: rgba(150, 142, 201, 0.1); /* soft purple overlay */
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form label {
+  font-family: 'Patrick Hand SC';
+  font-size: 20px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font-family: 'Patrick Hand';
+  font-size: 18px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  resize: vertical;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #968EC9; /* subtle purple accent on focus */
+}
+
+/* Submit button */
+.contact-form button {
+  padding: 16px 32px;
+  font-family: 'Patrick Hand';
+  font-size: 22px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  background: #F4985B;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+  box-shadow: 0 6px 4px rgba(0,0,0,0.25);
+}
+
+.contact-form button:hover {
+  opacity: 0.85;
+}
+
+/* Contact info box */
+.contact-info {
+  background: rgba(238, 225, 118, 0.15); /* soft yellow accent */
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.contact-info h2 {
+  font-family: 'Zilla Slab Highlight';
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-family: 'Patrick Hand';
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+#formMessage {
+  font-family: 'Patrick Hand SC';
+  font-size: 20px;
+  margin-top: 10px;
+  min-height: 24px; /* prevents layout jump when message appears */
+  transition: opacity 0.3s;
+}
+
+
+/*Footer*/
 footer p {
-	
 	font-size: 20px;
+}
+
+footer h3 {
+	font-family: "Patrick Hand SC";
+	margin-bottom: 10px;
+	font-weight: 700;
+	font-size: 30px;
+}
+footer {
+  background: #E3BDC8;
+  padding: 60px 40px;
+}
+
+/* Two-column layout */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+/* Navigation list */
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav li {
+  margin-bottom: 10px;
+}
+
+.footer-nav li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  opacity: 0.9;
+  font-family: "Patrick Hand";
+}
+
+.footer-nav li a:hover {
+  color:white;
+  text-decoration: underline;
+}
+
+/* Contact section */
+.footer-contact p {
+  margin: 0 0 12px;
+  font-size: 20px; 
+}
+
+.footer-bottom {
+	text-align: right;
 }

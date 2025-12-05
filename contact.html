@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="stylesheet" href="styles.css">
-    //need to add the fonts
-    //
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Patrick+Hand+SC&family=Zilla+Slab+Highlight:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="site-header">
@@ -26,28 +25,55 @@
         </nav>
     </header>
 
-
     <section class="contact-section">
       <h1>Get In Touch</h1>
+      <p>Have questions, suggestions, or want to share your latest project? Send us a message and we’ll get back to you soon!</p>
 
-      <form class="contact-form">
-        <label>Name</label>
-        <input type="text" placeholder="Your Name">
+      <div class="contact-container">
+        <form class="contact-form">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Your Name">
 
-        <label>Subject</label>
-        <input type="text" placeholder="Your Subject">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" placeholder="Your Subject">
 
-        <label>Description</label>
-        <textarea placeholder="Your Message"></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" placeholder="Your Message"></textarea>
 
-        <button class="submit-btn">Submit</button>
-      </form>
+          <button>Submit</button>
+          <p id="formMessage"></p>
+        </form>
+      </div>
     </section>
 
-
+    
     <footer>
-        <p>Our Team | Other Collaborators</p>
+      <div class="footer-container">
+        <!-- Left: Navigation -->
+        <div class="footer-nav-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-nav">
+          		<li><a href="index.html">Home</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="materials.html">Kits</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="story.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Right: Contact Info -->
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p><strong>Location:</strong> Chicago, IL</p>
+          <p><strong>Email:</strong> example@email.com</p>
+          <p><strong>Phone:</strong> (555) 123-4567</p>
+          <p><strong>Social:</strong> Instagram | TikTok | Pinterest</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
         <p>&copy; 2025 Site Name. All rights reserved.</p>
+      </div>
     </footer>
+<script src="script.js"></script>
 </body>
 </html>
