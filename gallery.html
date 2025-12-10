@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Patrick+Hand+SC&family=Zilla+Slab+Highlight:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="paper">
     <header class="site-header">
-        <div class="logo-container">
-            <img src="/images/logo.png" alt="Site Logo" class="logo">
+        <div class="brand">
+            <img src="images/logo.png" alt="Logo" class="logo">
             <span class="site-name">Craftopia</span>
         </div>
         <nav class="main-nav">
@@ -24,47 +24,62 @@
         </nav>
     </header>
 
-    <section class="gallery-section">
-      <h1>GALLERY</h1>
-      <p>Join the Community Showcase.</p>
-      <button>Add Your Work!</button>
-      <div class="gallery-grid">
-        <img src="images/art1.jpg">
-        <img src="images/art2.jpg">
-        <img src="images/art3.jpg">
-        <img src="images/art4.jpg">
-        <img src="images/art5.jpg">
-        <img src="images/art6.jpg">
-      </div>
-    </section>
+<section class="gallery-section">
+  <h1>GALLERY</h1>
+  <h3>Join the Community Showcase.</h3>
+  <button>Add Your Work!</button>
+
+  <div class="gallery-grid">
+    <div class="gallery-card openModal"><img src="images/art1.jpg" alt="Art 1"></div>
+    <div class="gallery-card openModal"><img src="images/art2.jpg" alt="Art 2"></div>
+    <div class="gallery-card openModal"><img src="images/art3.jpg" alt="Art 3"></div>
+    <div class="gallery-card openModal"><img src="images/art4.jpg" alt="Art 4"></div>
+    <div class="gallery-card openModal"><img src="images/art5.jpg" alt="Art 5"></div>
+    <div class="gallery-card openModal"><img src="images/art6.jpg" alt="Art 6"></div>
+  </div>
+	
+	<div id="modal" class="modal">
+  	<div class="modal-content">
+    	<span id="closeModal" class="close">X</span>
     
-    <footer>
-      <div class="footer-container">
-        <!-- Left: Navigation -->
-        <div class="footer-nav-section">
-          <h3>Quick Links</h3>
-          <ul class="footer-nav">
-          		<li><a href="index.html">Home</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="materials.html">Kits</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="story.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <!-- Right: Contact Info -->
-        <div class="footer-contact">
-          <h3>Contact Us</h3>
-          <p><strong>Location:</strong> Chicago, IL</p>
-          <p><strong>Email:</strong> example@email.com</p>
-          <p><strong>Phone:</strong> (555) 123-4567</p>
-          <p><strong>Social:</strong> Instagram | TikTok | Pinterest</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Site Name. All rights reserved.</p>
-      </div>
-    </footer>
+    	<img id="modalImg" src="images/art1.jpg" alt="Art">
+    	<h2>Name: An Artwork</h2>
+    	<p>This is a community favorite piece!</p>
+    	<p class="modal-author">By: Craftopia Community</p>
+    	<p class="modal-likes"> 150 likes</p>
+  	</div>
+	</div>
+
+</section>
+
+
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-nav-section">
+      <h3>Quick Links</h3>
+      <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="materials.html">Kits</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="story.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p><strong>Location:</strong> Chicago, IL</p>
+      <p><strong>Email:</strong> example@email.com</p>
+      <p><strong>Phone:</strong> (555) 123-4567</p>
+      <p><strong>Social:</strong> Instagram | TikTok | Pinterest</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Craftopia. All rights reserved.</p>
+  </div>
+</footer>
+
 <script src="script.js"></script>
 </body>
 </html>
