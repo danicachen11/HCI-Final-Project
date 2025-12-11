@@ -93,6 +93,7 @@ button:hover {
   color: white;
   font-size: 25px;
   font-weight: 800;
+  font-family: 'Zilla Slab';
 }
 
 .logo {
@@ -113,6 +114,7 @@ nav ul li a {
   color: white;
   font-size: 25px;
   font-weight: 800;
+  font-family: 'Zilla Slab';
 }
 
 nav ul li a:hover {
