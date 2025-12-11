@@ -280,16 +280,47 @@ nav ul li a:hover {
 
 
 
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .craft-grid {
+    grid-template-columns: repeat(2, 220px);
+    gap: 50px;
+  }
+}
+
+@media (max-width: 700px) {
+  .craft-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+@media (max-width: 1000px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
 /* ====================== Blog Page ============================*/
 
+/* ====================== Blog Page ============================ */
+
+/* Section container */
 .blog-section {
   padding: 80px 20px;
-  background: white;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* individual blog cards */
+/* Shared card styles for all blog cards */
 .blog-card {
   display: flex;
   flex-direction: row;
@@ -302,29 +333,36 @@ nav ul li a:hover {
   transition: 0.25s;
   cursor: pointer;
 }
+
 .blog-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.18);
 }
+
+/* Image inside blog cards */
 .blog-card img {
-  width: 360px;           
+  width: 360px;
   height: auto;
   object-fit: cover;
   border-radius: 16px 0 0 16px;
   display: block;
 }
+
+/* Text content inside cards */
 .blog-card div {
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .blog-card h3 {
   margin-top: 0;
   margin-bottom: 12px;
   font-family: 'Patrick Hand SC';
   font-size: 40px;
 }
+
 .blog-card p {
   margin: 0;
   font-family: 'Patrick Hand';
@@ -333,13 +371,55 @@ nav ul li a:hover {
   color: #4B3F99;
 }
 
+/* Grid layout for multi-card sections like reviews and tips */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Headings for blog sections */
+.blog-section h1,
+.blog-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: 'Zilla Slab Highlight';
+  font-weight: 400;
+}
+
+.blog-section h1 {
+  font-size: 60px;
+}
+
+.blog-section h2 {
+  font-size: 50px;
+  color: #000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .blog-card {
+    flex-direction: column;
+  }
+
   .blog-card img {
     width: 100%;
     border-radius: 16px 16px 0 0;
   }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-section h1 {
+    font-size: 48px;
+  }
+
+  .blog-section h2 {
+    font-size: 36px;
+  }
 }
-
-
 
 
 
@@ -398,6 +478,21 @@ nav ul li a:hover {
 .add-btn {
   width: 100%;
 }
+
+/* Responsive */
+@media (max-width: 950px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 /* ====================== Gallery Section ============================*/
 .gallery-section {
@@ -617,6 +712,35 @@ nav ul li a:hover {
   font-family: 'Patrick Hand';
   font-size: 20px;
   text-align: center;
+}
+
+
+@media (max-width: 900px) {
+  .story-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .story-text {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .story-section h1 {
+    font-size: 48px;
+  }
+  .story-text {
+    font-size: 20px;
+  }
+  .team h2,
+  .other-team h2 {
+    font-size: 36px;
+  }
+  .team-grid img {
+    width: 140px;
+    height: 140px;
+  }
 }
 
 
