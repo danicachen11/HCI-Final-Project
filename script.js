@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- Contact form JS ---
+  // --------Contact form ----- //
   const contactForm = document.querySelector('.contact-form');
   const nameInput = document.getElementById('name');
   const subjectInput = document.getElementById('subject');
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   contactForm?.addEventListener('submit', e => {
     e.preventDefault();
-
+		// basic form validation
     if (nameInput.value.trim() === "" || subjectInput.value.trim() === "" || messageInput.value.trim() === "") {
       formMessage.textContent = "Please fill out all fields.";
       formMessage.style.color = "red";
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // --- Modal JS ---
+  // ----------- Modal popup --- // 
 	const modal = document.getElementById("modal");
   const closeBtn = document.getElementById("closeModal");
   const modalImg = document.getElementById("modalImg");
@@ -27,12 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   modalTriggers.forEach(trigger => {
     trigger.addEventListener("click", () => {
-      // Grab the <img> inside the clicked card
+      // grab the img inside the clicked card
       const imgElement = trigger.querySelector("img");
       modalImg.src = imgElement.src;
       modalImg.alt = imgElement.alt;
-
-      modal.classList.add("show"); // open modal
+			// will open modal
+      modal.classList.add("show"); 
     });
   });
 

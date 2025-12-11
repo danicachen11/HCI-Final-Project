@@ -59,7 +59,7 @@ button:hover {
 }
 
 .paper {
-  background: #fffaf7;             /* soft cream */
+  background: #fffaf7;             
   background-image: repeating-linear-gradient(
     45deg,
     rgba(0,0,0,0.02) 0,
@@ -67,6 +67,10 @@ button:hover {
     transparent 1px,
     transparent 5px
   );
+}
+
+.background {
+	background:#FFFBFB;
 }
 
 /* ====================== index.html - Home Page ============================*/
@@ -161,49 +165,60 @@ nav ul li a:hover {
   margin: 0 0 11px;
 }
 
-/*Craft section*/
-.crafts{
-  background-color: #FFFBFB;
+/* ====================== Index Page - Home Sections ====================== */
+
+.crafts,
+.featured-projects,
+.workshops {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* crafts section */
+.crafts, .featured-projects, .workshops{
+  padding: 80px 0;
+  text-align: center;
+}
+
+.crafts h2, .featured-projects h2, .workshops h2 {
+  font-size: 60px;
+  margin: 20px 0 60px;
+  font-family: 'Zilla Slab Highlight';
 }
 
 .craft-grid {
   display: grid;
-  grid-template-columns: repeat(3, 250px); 
-  justify-content: center;           
-  gap: 60px;                  
-  margin-top: 60px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;  
+  margin-top: 0;
 }
 
-/* the individual cards */
 .craft {
-	background-color: white;
+  background-color: white;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
-  width: 100%; 
+  width: 100%;
 }
 
 .craft img {
   width: 100%;
-  aspect-ratio: 1 / 1;  
-  object-fit: cover; 
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   display: block;
 }
-.crafts p {
+
+.crafts p , .featured-projects p {
   font-family: 'Patrick Hand';
-  font-size: 18px;
+  font-size: 25px;
   font-weight: 500;
   margin: 12px 0;
   color: #222;
-}
-
-.crafts h2, .featured-projects h2 {
-	font-size: 80px;
-	margin-top: 20px
-	margin-bottom: 20px;
+  padding: 20px;
 }
 
 .craft:hover {
@@ -211,39 +226,27 @@ nav ul li a:hover {
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/*featured projects section*/
-.featured-projects {
-  background: #FFFBFB;
-  padding: 80px 0;
-  text-align: center;
-}
-
-/* grid + cards */
+/* featured project section */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 per row */
-  max-width: 1100px;
-  margin: 0 auto;
-  gap: 60px;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 40px;
+  margin-top: 0;
 }
+
 .project-card {
   background: white;
-  border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   transition: 0.25s;
   cursor: pointer;
-  text-align: left;
+  width: 100%;
+  border-radius: 16px;
 }
 
 .project-card img {
   width: 100%;
   height: 220px;
-  object-fit: cover;
-}
-
-.project-card .content {
-  padding: 20px;
 }
 
 .project-card a {
@@ -256,111 +259,100 @@ nav ul li a:hover {
   box-shadow: 0 8px 20px rgba(0,0,0,0.18);
 }
 
-.workshops {
-  background: #FFFBFB;
-  padding: 60px 0;
-  text-align: center;
-}
-
+/* workshop section */
 .workshop-list {
-  list-style: none;
-  max-width: 800px;
-  margin: 40px auto 0;
+  max-width: 900px;
+  margin: 0 auto;
   padding: 0;
   text-align: left;
+  list-style: none;
+  display: grid;
+  gap: 25px;
 }
 
 .workshop-list li {
-  margin-bottom: 25px;
   padding-bottom: 15px;
   border-bottom: 1px solid #eee;
   font-family: 'Patrick Hand';
   font-size: 22px;
 }
 
-
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .craft-grid {
-    grid-template-columns: repeat(2, 220px);
-    gap: 50px;
-  }
-}
-
-@media (max-width: 700px) {
-  .craft-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-}
 @media (max-width: 1000px) {
+  .craft-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
+  .craft-grid,
   .project-grid {
     grid-template-columns: 1fr;
+  }
+  .workshop-list {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .crafts h2,
+  .featured-projects h2,
+  .workshops h2 {
+    font-size: 50px;
+    margin-bottom: 40px;
   }
 }
 
 
 
 
-/* ====================== Blog Page ============================*/
+/*   ====================== Blog Page ============================*/
 
-/* ====================== Blog Page ============================ */
-
-/* Section container */
 .blog-section {
-  padding: 80px 20px;
+  padding: 60px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Shared card styles for all blog cards */
 .blog-card {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-  margin-bottom: 40px;
   background: white;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   transition: 0.25s;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
 }
-
 .blog-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.18);
 }
 
-/* Image inside blog cards */
 .blog-card img {
-  width: 360px;
-  height: auto;
+  width: 100%;
+  height: 220px;
   object-fit: cover;
-  border-radius: 16px 0 0 16px;
   display: block;
+  border-radius: 16px 16px 0 0;
 }
 
-/* Text content inside cards */
+/*text inside card*/
 .blog-card div {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 10px;
 }
 
 .blog-card h3 {
-  margin-top: 0;
-  margin-bottom: 12px;
+  margin: 0;
   font-family: 'Patrick Hand SC';
-  font-size: 40px;
+  font-size: 28px;
+  color: #000;
 }
 
 .blog-card p {
@@ -368,36 +360,30 @@ nav ul li a:hover {
   font-family: 'Patrick Hand';
   font-size: 18px;
   line-height: 1.5;
-  color: #4B3F99;
+  letter-spacing: 0.5px;
 }
 
-/* Grid layout for multi-card sections like reviews and tips */
+/* grid layout for cards */
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   margin-top: 40px;
 }
 
-/* Headings for blog sections */
 .blog-section h1,
 .blog-section h2 {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   font-family: 'Zilla Slab Highlight';
   font-weight: 400;
+  margin-top: 80px;
 }
 
-.blog-section h1 {
-  font-size: 60px;
+.blog-section h1:first-of-type {
+  margin-top: 20px;
 }
 
-.blog-section h2 {
-  font-size: 50px;
-  color: #000;
-}
-
-/* Responsive adjustments */
 @media (max-width: 900px) {
   .blog-card {
     flex-direction: column;
@@ -643,7 +629,8 @@ nav ul li a:hover {
   
 }
 .story p {
-	letter-spacing: 0.3px;
+	font-size: 25px;
+	letter-spacing: 0.5px;
 	line-height: 1.6; 
 }
 
